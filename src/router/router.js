@@ -3,19 +3,37 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import MainPage from '@/components/Recommend/Recommend.vue'
+import Recommend from '@/components/Recommend/Recommend.vue'
+import Classify from '@/components/Classification/Classify.vue'
+import Cart from '@/components/ShoppingCart/Shopping.vue'
+import Person from '@/components/Person/Person.vue'
 
 export default new Router({
     routes: [
         {
-            path: '/',
-            name: 'index',
+            path: '*',
+            name: 'not_found',
             redirect: '/recommend'
         },
         {
             path: '/recommend',
             name: 'recommend',
-            component: MainPage,
+            component: Recommend,
+        },
+        {
+            path: '/classify',
+            name: 'classify',
+            component: Classify,
+        },
+        {
+            path: '/cart',
+            name: 'cart',
+            component: Cart,
+        },
+        {
+            path: '/person',
+            name: 'person',
+            component: Person,
         },
     ]
 })
