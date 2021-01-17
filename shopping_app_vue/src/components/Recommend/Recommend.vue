@@ -11,9 +11,10 @@
                     {{item}} {{index}}
                 </mt-tab-item>
             </mt-navbar>
+            
+            <router-view />
         </div>
 
-        <router-view />
     </div>
 </template>
 
@@ -33,20 +34,16 @@ export default {
     },
     created: function () {
         self.selected = 0
-        this.$router.push('/recommend/sale')
+        var current_route = this.$route.path
+        if (current_route != '/recommend/sale') {
+            this.$router.push('/recommend/sale')
+        }
     },
     watch: {
         "selected": {
             handler (val) {
-                // console.log(this.routes[val])
-                // return
-                // var current_route = this.$route.path.slice(1)
-                // console.log(current_route)
-                // if (val == oldval || val == current_route) {
-                //     return 
-                // }
                 var new_route = '/recommend/' + this.routes[val]
-                console.log(new_route)
+                console.log('Second route', new_route)
                 this.$router.push(new_route)
             },
             deep:true

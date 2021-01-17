@@ -11,6 +11,11 @@ import Person from '@/components/Person/Person.vue'
 import Sale from '@/components/Recommend/sale.vue'
 import Digital from '@/components/Recommend/digital.vue'
 import Jewl from '@/components/Recommend/jewl.vue'
+import Books from '@/components/Recommend/books.vue'
+import Clothes from '@/components/Recommend/clothes.vue'
+import Food from '@/components/Recommend/food.vue'
+import Medicine from '@/components/Recommend/medicine.vue'
+import Tools from '@/components/Recommend/tools.vue'
 
 export default new Router({
     routes: [
@@ -22,6 +27,7 @@ export default new Router({
         {
             path: '/recommend',
             name: 'recommend',
+            redirect: '/recommend/sale',
             component: Recommend,
             children: [
                 {
@@ -38,6 +44,31 @@ export default new Router({
                     path: '/recommend/jewl',
                     name: 'jewl',
                     component: Jewl,
+                },
+                {
+                    path: '/recommend/clothes',
+                    name: 'clothes',
+                    component: Clothes,
+                },
+                {
+                    path: '/recommend/books',
+                    name: 'books',
+                    component: Books,
+                },
+                {
+                    path: '/recommend/food',
+                    name: 'food',
+                    component: Food,
+                },
+                {
+                    path: '/recommend/medicine',
+                    name: 'medicine',
+                    component: Medicine,
+                },
+                {
+                    path: '/recommend/tools',
+                    name: 'tools',
+                    component: Tools,
                 }
             ]
         },

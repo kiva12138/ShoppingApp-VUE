@@ -31,17 +31,17 @@ export default {
   },
   data() {
     return {
-      selected: 'index',
+      selected: 'recommend',
     };
   },
   created: function () {
-    var current_route = this.$route.path.slice(1)
+    var current_route = this.$route.path.split('/')[1]
     this.selected = current_route
   },
   watch: {
     "selected": {
       handler (val, oldval) {
-        var current_route = this.$route.path.split('\\')[0]
+        var current_route = this.$route.path.split('/')[1]
         console.log("First route", current_route)
         if (val == oldval || val == current_route) {
           return 
