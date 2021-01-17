@@ -41,8 +41,8 @@ export default {
   watch: {
     "selected": {
       handler (val, oldval) {
-        var current_route = this.$route.path.slice(1)
-        console.log(current_route)
+        var current_route = this.$route.path.split('\\')[0]
+        console.log("First route", current_route)
         if (val == oldval || val == current_route) {
           return 
         }
